@@ -20,7 +20,7 @@
   ansible.builtin.file:
     path: /app
     state: directory 
-    
+
 - name: creat useradd expense
   ansible.builtin.user:
     name: expense
@@ -65,6 +65,8 @@
     target: /app/schema/backend.sql
 
 - name: daemon reload and restart service
+  tags: 
+  - deployment
   ansible.builtin.systemd_service:
     enabled: true
     state: restarted
