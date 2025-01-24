@@ -18,7 +18,7 @@
 
 - name: Create a directory 
   ansible.builtin.file:
-    path: "{{ APP_LOCAION }}"
+    path: /app
     state: directory 
 - name: creat useradd expense
   ansible.builtin.user:
@@ -32,7 +32,7 @@
 - name: Unarchive a file 
   ansible.builtin.unarchive:
     src: /tmp/backend.zip
-    dest: "{{ APP_LOCAION }}"
+    dest: /app
     remote_src: yes
 
 - name: Install dependencies
