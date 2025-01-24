@@ -25,7 +25,7 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 - name: coping file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: expense.conf.j2
     dest: /etc/nginx/default.d/expense.conf
 - name: restart nginx
