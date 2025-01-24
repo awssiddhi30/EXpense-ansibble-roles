@@ -53,7 +53,7 @@
   - PyMySQL
   - cryptography
 
-- name: import sql data
+- name: load schema
   community.mysql.mysql_db:
     state: import
     name: all
